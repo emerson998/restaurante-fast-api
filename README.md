@@ -10,8 +10,6 @@ A aplicação permite a gestão completa de restaurantes e seus respectivos prat
 
 A aplicação foi estruturada seguindo os princípios de **Clean Architecture**, promovendo a separação de preocupações, testabilidade e manutenibilidade. A estrutura de camadas é a seguinte:
 
-$$\text{API} \rightarrow \text{Use Case} \rightarrow \text{Repository} \rightarrow \text{Database}$$
-
 | Camada | Responsabilidade |
 | :--- | :--- |
 | **API** | Define as rotas HTTP e lida com a requisição/resposta. |
