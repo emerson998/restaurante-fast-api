@@ -1,6 +1,7 @@
 from app.infra.repository import RestaurantRepository
 from app.domain.schemas import RestaurantCreate
 from sqlalchemy.orm import Session
+from sqlalchemy import text
 
 class RestaurantUseCase:
     def __init__(self, db: Session):
@@ -21,7 +22,7 @@ class RestaurantUseCase:
         return self.repo.get_all()
 
     def get_restaurant_native(self, restaurant_id: int, db: Session):
-        sql = "SELECT * FROM restaurants WHERE id = :id"
+        sql = text("SELECT * FROM restaurants WHERE id = :id")
         result = db.execute(sql, {"id": restaurant_id}).mappings().first()
         if not result:
             raise ValueError("Restaurante não encontrado")
